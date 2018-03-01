@@ -22,6 +22,7 @@ Start the web-service with:
 ```
 python3 app.py
 ```
+Please note that to use commit service, the user has to have write access on the .db file.
 
 Default configuration listens from port 5000.
 
