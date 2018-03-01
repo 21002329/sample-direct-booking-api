@@ -37,7 +37,7 @@ curl -X POST \
 ```
 ## Bookings
 ### URL
-`/bookings`
+`/bookings/<int:user_id>`
 ### Method
 `GET`
 ### Success Response
@@ -72,7 +72,7 @@ curl -X POST \
 ### Sample Call
 ```
 curl -X GET \
-  http://localhost:5000/bookings \
+  http://localhost:5000/bookings/1 \
   -H 'Content-Type: application/json' \
   -d '{
 	"user_id": "1",
