@@ -1,10 +1,11 @@
 # Direct Booking API
-----
-* ##URL
+
+## Commit
+### URL
     /commit
-    **Method:**
+### Method
     `POST`
-    **Data Params**
+### Data Params
     user_id: ID of User
     book_date: Date of booking
     amount: Amount of booking (in ref. currency)
@@ -12,13 +13,13 @@
     flight_origin: Origin of booked flight
     flight_dest: Origin of booked flight
     flight_nr: Number of booked flight
-    **Success Response**
-    * **Code:** `201 CREATED`
-    * **Content:** `{"info": "Commited booking!"}`
-    **Error Response**
-    * **Code:** `400 BAD REQUEST`
-    * **Content:** `{"error": "Missing one or more mandatory parameters for commit service"}`
-    **Sample Call**
+### Success Response
+* **Code:** `201 CREATED`
+* **Content:** `{"info": "Commited booking!"}`
+### Error Response
+* **Code:** `400 BAD REQUEST`
+* **Content:** `{"error": "Missing one or more mandatory parameters for commit service"}`
+### Sample Call
     ```
     curl -X POST \
         http://localhost:5000/commit \
