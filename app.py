@@ -55,7 +55,7 @@ def commit():
 @app.route('/bookings/<int:user_id>', methods=['GET'])
 def bookings(user_id):
     bookings = session.query(Booking).filter_by(user_id=user_id).all()
-    return jsonify(Bookings=[i.serialize for i in bookings]), 201
+    return jsonify(Bookings=[i.serialize for i in bookings]), 200
 
 
 # This handles 400 BAD REQUEST errors
