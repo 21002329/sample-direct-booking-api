@@ -9,6 +9,8 @@ Flask framework is used for web functionalities. You can download it from https:
 
 SQLAlchemy is used as the ORM. You can download it from http://www.sqlalchemy.org/download.html.
 
+SQLite is used for persistence layer. Please refer to https://www.sqlite.org/index.html.
+
 ### Setting up
 Initialize the data model with:
 ```
