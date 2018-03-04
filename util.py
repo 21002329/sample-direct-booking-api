@@ -18,6 +18,6 @@ class Validator():
         return None
 
 
-class ErrorHandler():
-    def prepare(desc, status):
-        return make_response(jsonify({'error': desc}), status)
+class ApiResponseHandler():
+    def prepare(context, message, status):
+        return make_response(jsonify({'context': context, 'message': message}), status)
