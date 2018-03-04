@@ -28,7 +28,8 @@ Default configuration listens from port 5000.
 
 Homepage can be then accessed from http://localhost:$PORT/.
 
-Please refer to `API.md` for API use and testing.
+### API Specification
+Refer to `api.yaml` for OpenAPI Specification of this web-service.
 
 ### Styling
 PEP8 - Style Guide has been used for the project, please refer to https://www.python.org/dev/peps/pep-0008/.

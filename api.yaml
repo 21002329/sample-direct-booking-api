@@ -1,0 +1,103 @@
+swagger: "2.0"
+info:
+  description: "This is a sample direct booking web-service."
+  version: "1.0.0"
+  title: "Direct Booking"
+  contact:
+    email: "alaz.ozyar@gmail.com"
+host: "directbooking.idealo.com"
+basePath: "/v1"
+tags:
+- name: Commit
+  description: "Commit a booking"
+- name: Booking
+  description: "Booking operations"
+schemes:
+- "http"
+paths:
+  /commit:
+    post:
+      tags:
+      - Commit
+      summary: "Commit a booking"
+      description: "Commits a booking"
+      operationId: commitBooking
+      parameters:
+        - name: booking
+          in: body
+          description: Booking to commit
+          required: true
+          schema:
+            $ref: "#/definitions/booking"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        400:
+          description: "Bad request"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+  
+  /bookings/{userId}:
+    get:
+      tags:
+      - Booking
+      summary: "All bookings of user"
+      description: "Returns all bookings of user with given ID"
+      operationId: getBookingsByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          type: integer
+          required: true
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/booking"
+definitions:
+  booking:
+    type: object
+    required:
+    - id
+    - amount
+    - book_date
+    - merchant_id
+    - flight_date
+    - flight_origin
+    - flight_dest
+    - flight_nr
+    properties:
+      id:
+        type: integer
+        format: int64
+      amount:
+        type: number
+        format: double
+      merchant_id:
+        type: integer
+        format: int64
+      book_date:
+        type: integer
+        format: date
+      flight_date:
+        type: string
+        format: date
+      flight_origin:
+        type: string
+      flight_dest:
+        type: string
+      flight_nr:
+        type: string
+      
+  ApiResponse:
+    type: object
+    properties:
+      context:
+        type: string
+      message:
+        type: string
