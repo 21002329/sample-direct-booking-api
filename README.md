@@ -28,6 +28,11 @@ Default configuration listens from port 5000.
 
 Homepage can be then accessed from http://localhost:$PORT/.
 
+Test base functionalities with
+```
+python3 test.py
+```
+
 ### API Specification
 Refer to `api.yaml` for OpenAPI Specification of this web-service.
 
