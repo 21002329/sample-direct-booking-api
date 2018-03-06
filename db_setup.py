@@ -35,7 +35,7 @@ class Booking(Base):
     flight_origin = Column(String(250), nullable=False)
     flight_dest = Column(String(250), nullable=False)
     flight_nr = Column(Integer)
-    
+
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
@@ -53,8 +53,9 @@ class Booking(Base):
             'flight_nr': self.flight_nr,
         }
 
+def init_db(db_uri):
+    engine = create_engine(db_uri)
+    Base.metadata.create_all(engine)
 
-engine = create_engine('sqlite:///direct_booking.db')
-
-
-Base.metadata.create_all(engine)
+if __name__ == '__main__':
+    init_db('sqlite:///direct-booking.db')
