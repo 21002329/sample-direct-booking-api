@@ -5,8 +5,7 @@ info:
   title: "Direct Booking"
   contact:
     email: "alaz.ozyar@gmail.com"
-host: "directbooking.idealo.com"
-basePath: "/v1"
+host: "directbooking.example.com"
 tags:
 - name: Commit
   description: "Commit a booking"
